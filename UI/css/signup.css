@@ -1,0 +1,56 @@
+* {
+	margin:0;
+	padding:0;
+}
+body{
+  background-color: black;
+  background-position: center;
+  background-size: auto;
+  background-image: url(images/4.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+}
+.form{
+  padding: 10%;
+}
+.register{
+  background-color: #eeeeee;
+  width: 500px;
+  margin:0 auto 50px;
+  padding:10px;
+  margin-top: 10px;
+  margin-right: 20px;
+  position: relative;
+  float: right;
+}
+.form input{
+  box-sizing: border-box;
+  padding: 15px;
+  width: 100%;
+  border: 0;
+  font-size: 15px;
+  margin-top: 14px;
+}
+button{
+  background-color:green;
+  text-align: center;
+  color: white;
+  width: 130px;
+  padding: 15px;
+  border: none;
+  font-size: 12px;
+  margin-top: 12px;
+}
+.registerbtn, .cancelbtn{
+  padding: 10px 15px;
+  border-color: green;
+}
+h1{
+  color: green;
+  text-align: center;
+}
+.img{
+  width: 800px;
+  position: absolute;
+}
