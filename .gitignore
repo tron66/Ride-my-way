@@ -3,3 +3,4 @@
 **venv
 **.cache
 **._cache
+**.pytest_cache
