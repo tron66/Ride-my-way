@@ -1,0 +1,10 @@
+[
+  "test_sample.py::test_answer",
+  "tests/test_app.py::TestFlaskApi::test_delete",
+  "tests/test_app.py::TestFlaskApi::test_get_all",
+  "tests/test_app.py::TestFlaskApi::test_get_one",
+  "tests/test_app.py::TestFlaskApi::test_post",
+  "tests/test_app.py::TestFlaskApi::test_ride_not_exist",
+  "tests/test_app.py::TestFlaskApi::test_update",
+  "tests/test_app.py::TestFlaskApi::test_update_error"
+]
