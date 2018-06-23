@@ -4,4 +4,4 @@ MarkupSafe==0.23
 Werkzeug==0.11.3
 itsdangerous==0.24
 Flask-RESTful==0.3.1
-Flask-Testing==1.0
+Flask-Testing==0.4.2
