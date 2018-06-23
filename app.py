@@ -41,6 +41,10 @@ rides = [{
 }
 ]
 
+@app.route('/')
+def index():
+    return 'here'
+    
 def _record_exists(drivername):
     return [ride for ride in rides if ride["drivername"] == drivername]
 
