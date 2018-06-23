@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort, make_response, url_for, abort, make_response
+from flask import Flask, jsonify, request, abort, make_response, url_for, abort, make_response, render_template
 from flask_httpauth import HTTPBasicAuth
 
 #define app using flask
@@ -43,8 +43,8 @@ rides = [{
 
 @app.route('/')
 def index():
-    return 'here'
-    
+    return render_template('index.html')
+
 def _record_exists(drivername):
     return [ride for ride in rides if ride["drivername"] == drivername]
 
