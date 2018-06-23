@@ -41,9 +41,6 @@ rides = [{
 }
 ]
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 def _record_exists(drivername):
     return [ride for ride in rides if ride["drivername"] == drivername]
