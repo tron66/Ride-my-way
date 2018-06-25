@@ -45,18 +45,18 @@ rides = [{
 def _record_exists(drivername):
     return [ride for ride in rides if ride["drivername"] == drivername]
 
-@app.route('/ridemyway/api/v1/rides',methods=['GET'])
+@app.route('/ridemyway/api/v1/rides', methods=['GET'])
 def get_rides():
     return jsonify({'rides':rides})
 
-@app.route('/ridemyway/api/v1/rides/<int:ride_id>',methods=['GET'])
+@app.route('/ridemyway/api/v1/rides/<int:ride_id>', methods=['GET'])
 def get_ride(ride_id):
     ride = [ride for ride in rides if ride['id'] == ride_id]
     if len(ride) == 0:
         abort(404)
     return jsonify({'rides':ride})
 
-@app.route('/ridemyway/api/v1/rides',methods=['POST'])
+@app.route('/ridemyway/api/v1/rides', methods=['POST'])
 def create_ride():
     if not request.json or 'drivername' not in request.json or 'price' not in request.json:
         abort(400)
