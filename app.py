@@ -81,7 +81,7 @@ def create_ride():
     rides.append(ride)
     return jsonify({'ride': ride}), 201
 
-@app.route('/ridemyway/api/v1/rides/<int:ride_id>/requests',methods=['POST'])
+@app.route('/ridemyway/api/v1/rides/<int:ride_id>/requests', methods=['POST'])
 def request_ride(ride_id):
     if not request.json or 'drivername' not in request.json:
         abort(400)
