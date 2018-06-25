@@ -1,4 +1,0 @@
-{
-  "tests/test_app.py::TestFlaskApi::test_item_not_exist": true,
-  "tests/test_app.py::Testcode::test_index": true
-}
