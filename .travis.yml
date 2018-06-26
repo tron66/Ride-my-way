@@ -5,4 +5,12 @@ python:
   -3.5
   -3.6
 
+install:
+  - pip install -r requirements.txt
+  - pip install coveralls
+  - pip install unittest2
+
 script: "python app.py test"
+
+after_success:
+  - coveralls
