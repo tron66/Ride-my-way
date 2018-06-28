@@ -26,7 +26,7 @@ class Ride(object): #ride classmethod
 
     @classmethod #checks to see the date doesnt exceed the current date
     def valid_date(self, date):
-        date = datetime.strptime(edate, '%Y-%m-%d').date()
+        date = datetime.strptime(date, '%Y-%m-%d').date()
         if date <= date.today():
             return False
         return True

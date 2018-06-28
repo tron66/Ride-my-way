@@ -1,10 +1,10 @@
 ride1 = {
-    "drivername": "jessy",
-    "start": "kasese",
-    "end": "mbale"
-    "date": "2018-12-1",
-    "time": "6pm",
-    "price": "40000"
+    "drivername" : "jessy",
+    "start" : "kasese",
+    "end" : "mbale",
+    "date":  "2018-12-1",
+    "time" : "6pm",
+    "price" : "40000"
 }
 
 ride2 = {
