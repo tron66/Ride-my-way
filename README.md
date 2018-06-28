@@ -8,7 +8,7 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/bb344adc8362bd7686da/test_coverage)](https://codeclimate.com/github/tron66/Ride-my-way/test_coverage)
 
-[![Coverage Status](https://coveralls.io/repos/github/tron66/Ride-my-way/badge.svg?branch=master)](https://coveralls.io/github/tron66/Ride-my-way?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/tron66/Ride-my-way/badge.svg?branch=master)](https://coveralls.io/github/tron66/Ride-my-way?branch=feature2)
 
 [![Coverage Status](https://coveralls.io/repos/github/tron66/Ride-my-way/badge.svg)](https://coveralls.io/github/tron66/Ride-my-way)
 
