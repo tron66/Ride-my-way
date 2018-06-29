@@ -1,9 +1,8 @@
-from flask import Flask, jsonify, request, abort, make_response, url_for, abort, make_response, render_template
-from flask_httpauth import HTTPBasicAuth
+from flask import Flask, jsonify, request, abort, make_response
+form flask_restful import Api, Resource
 
 #define app using flask
 app = Flask(__name__)
-#auth = HTTPBasicAuth()
 
 @app.errorhandler(400)
 def bad_request(error):
@@ -16,30 +15,27 @@ def not_found(error):
 
 
 rides = [{
-'id':1,
-'drivername':'sam',
-'From':'kaweme',
-'to':'masaka',
-'depaturedate':2/3/2018,
-'price':40000
-},
-{
-'id':2,
-'drivername':'mathew',
-'From':'mbarara',
-'to':'singiro',
-'depaturedate':5/6/2018,
-'price':30000
-},
-{
-'id':3,
-'drivername':'grace',
-'From':'jinja',
-'to':'nakawa',
-'depaturedate':7/8/2018,
-'price':60000
-}
-]
+    'id': 1,
+    'drivername': 'sam',
+    'From': 'kaweme',
+    'to': 'masaka',
+    'depaturedate': 2/3/2018,
+    'price': 40000},
+         {
+             'id': 2,
+             'drivername': 'mathew',
+             'From': 'mbarara',
+             'to': 'singiro',
+             'depaturedate': 5/6/2018,
+             'price': 30000},
+         {
+             'id': 3,
+             'drivername': 'grace',
+             'From': 'jinja',
+             'to': 'nakawa',
+             'depaturedate': 7/8/2018,
+             'price': 60000}
+        ]
 
 
 def _record_exists(drivername):
@@ -52,7 +48,7 @@ def get_rides():
 @app.route('/ridemyway/api/v1/rides/<int:ride_id>', methods=['GET'])
 def get_ride(ride_id):
     ride = [ride for ride in rides if ride['id'] == ride_id]
-    if len(ride) == 0:
+    if len(ride) == []:
         abort(404)
     return jsonify({'rides':ride})
 
@@ -67,17 +63,18 @@ def create_ride():
     From = request.json.get('From')
     to = request.json.get('to')
     depaturedate = request.json.get('depaturedate')
-    if type(depaturedate) is not int:
+    if isinstance(depaturedate) is not int:
         abort(400)
     price = request.json.get('price')
-    if type(price) is not int:
+    if isinstance(price) is not int:
         abort(400)
-    ride = {"id": ride_id,
-    "drivername": drivername,
-    "From":From,
-    "to": to,
-    "depaturedate": depaturedate,
-    "price": price}
+    ride = {
+        "id": ride_id,
+        "drivername": drivername,
+        "From":From,
+        "to": to,
+        "depaturedate": depaturedate,
+        "price": price}
     rides.append(ride)
     return jsonify({'ride': ride}), 201
 
@@ -86,15 +83,16 @@ def request_ride(ride_id):
     if not request.json or 'drivername' not in request.json:
         abort(400)
     drivername = request.json.get('drivername')
-    ride = {"id": ride_id,
-    "drivername": drivername}
+    ride = {
+        "id": ride_id,
+        "drivername": drivername}
     ride = [ride for ride in rides if ride["drivername"] == drivername]
     return jsonify({'ride':ride}), 201
 
 @app.route('/ridemyway/api/v1/rides/<int:ride_id>', methods=['PUT'])
 def update_ride(ride_id):
     ride = [ride for ride in rides if ride['id'] == ride_id]
-    if len(ride) == 0:
+    if len(ride) == []:
         abort(404)
     if not request.json:
         abort(400)
@@ -102,11 +100,7 @@ def update_ride(ride_id):
     From = request.json.get('From', ride[0]['From'])
     to = request.json.get('to', ride[0]['to'])
     depaturedate = request.json.get('depaturedate', ride[0]['depaturedate'])
-    #if type(depaturedate) is not int:
-    #    abort(400)
     price = request.json.get('price', ride[0]['price'])
-    #if type(price) is not int:
-    #    abort(400)
     ride[0]['drivername'] = drivername
     ride[0]['From'] = From
     ride[0]['to'] = to

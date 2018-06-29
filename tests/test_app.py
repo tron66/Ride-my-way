@@ -51,12 +51,6 @@ class TestFlaskApi(unittest.TestCase):
                                  content_type='application/json')
         self.assertEqual(response.status_code, 400)
         data = json.loads(response.get_data())
-        #self.assertEqual(data['rides']['ride_id'], '5')
-        #self.assertEqual(data['rides']['drivername'], 'costa')
-        #self.assertEqual(data['rides']['From'], 'kla')
-        #self.assertEqual(data['rides']['to'], 'mask')
-        #self.assertEqual(data['rides']['depaturedate'], 2/3/2018)
-        #self.assertEqual(data['rides']['price'], 20000)
         ride = {"drivername": "costa", "From": "kla", "to": "mask", "depaturedate": 2/3/2018, "price": 20000}
         response = self.app.post(BASE_URL,
                                  data=json.dumps(ride),
